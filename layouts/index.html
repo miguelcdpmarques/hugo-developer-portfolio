@@ -6,65 +6,77 @@
 {{ "<!-- Index -->" | safeHTML }}
 {{ $index := resources.Get "css/index.css" | minify }}
 <link rel="stylesheet" href="{{ $index.Permalink | relURL}}">
-<!--
-  _    _
- | |  | |                             /\
- | |__| |   ___   _ __    ___        /  \     _ __    ___    __ _
- |  __  |  / _ \ | '__|  / _ \      / /\ \   | '__|  / _ \  / _` |
- | |  | | |  __/ | |    | (_) |    / ____ \  | |    |  __/ | (_| |
- |_|  |_|  \___| |_|     \___/    /_/    \_\ |_|     \___|  \__,_|
-
- -->
 <section>
     <div class="uk-container uk-margin-xlarge-top uk-margin-xlarge-bottom">
-
         <h1 class="uk-heading-large">{{ .Site.Data.homepage.banner.title | safeHTML }}</h1>
     </div>
-
-
 </section>
-<!--
-   _____                  _           _     _        _           _
-  / ____|                (_)         | |   | |      (_)         | |
- | (___     ___     ___   _    __ _  | |   | |       _   _ __   | | __  ___
-  \___ \   / _ \   / __| | |  / _` | | |   | |      | | | '_ \  | |/ / / __|
-  ____) | | (_) | | (__  | | | (_| | | |   | |____  | | | | | | |   <  \__ \
- |_____/   \___/   \___| |_|  \__,_| |_|   |______| |_| |_| |_| |_|\_\ |___/
 
-
--->
 <div class="uk-text-center uk-margin-xlarge-bottom uk-margin-xlarge-top">
     <ul id="links" class="icons">
         {{ range .Site.Languages -}}
-        {{ if ne .LanguageName $.Site.Language.LanguageName }}
-        <li><a href="/{{ .Lang }}">{{ .LanguageName }}</a></li>
+            {{ if ne .LanguageName $.Site.Language.LanguageName }}
+            <li>
+                <a href="/{{ .Lang }}">{{ .LanguageName }}</a>
+            </li>
+            {{ end }}
         {{ end }}
-        {{ end }}
+
         {{ if .Site.Data.homepage.social.twitter }}
-        <li><a href="https://twitter.com/{{ .Site.Data.homepage.social.twitter }}" > <img
-                    class="contain" src="https://cdn.svgporn.com/logos/twitter.svg" alt="Twitter" loading="lazy"></a></li>
-        {{ end }} {{ if .Site.Data.homepage.social.linkedin }}
-        <li><a href="https://www.linkedin.com/in/{{ .Site.Data.homepage.social.linkedin }}">
-            <img class="contain" src="https://cdn.svgporn.com/logos/linkedin.svg" alt="LinkedIn" loading="lazy"> </a></li>
-        {{ end }} {{ if .Site.Data.homepage.social.github }}
-        <li><a href="https://github.com/{{ .Site.Data.homepage.social.github }}"> <img
-                    class="contain" src="https://cdn.svgporn.com/logos/github-icon.svg" alt="GitHub" loading="lazy"> </a></li>
-        {{ end }} {{ if .Site.Data.homepage.social.gitlab }}
-        <li><a href="https://gitlab.com/{{ .Site.Data.homepage.social.gitlab }}"> <img
-                    class="contain" src="https://cdn.svgporn.com/logos/gitlab.svg" alt="GitLab" loading="lazy"></a></li>
-        {{ end }} {{ if .Site.Data.homepage.social.facebook }}
-        <li><a href="https://www.facebook.com/{{ .Site.Data.homepage.social.facebook }}"> <img
-                    class="contain" src="https://cdn.svgporn.com/logos/facebook.svg" alt="Facebook" loading="lazy"></a></li>
-        {{ end }} {{ if .Site.Data.homepage.social.instagram }}
-        <li><a href="https://instagram.com/{{ .Site.Data.homepage.social.instagram }}"> <img
-                    class="contain" src="https://cdn.svgporn.com/logos/instagram-icon.svg" alt="Instagram" loading="lazy"></a></li>
-        {{ end }}{{ if .Site.Data.homepage.social.gmail }}
-        <li><a href="mailto:{{ .Site.Data.homepage.social.gmail }}@gmail.com" > <img
-                    class="contain" src="https://cdn.svgporn.com/logos/google-gmail.svg" alt="Gmail" loading="lazy"></a></li>
+        <li>
+            <a href="https://twitter.com/{{ .Site.Data.homepage.social.twitter }}">
+                <img class="contain" src="https://cdn.svgporn.com/logos/twitter.svg" alt="Twitter" loading="lazy">
+            </a>
+        </li>
+        {{ end }}
+        
+        {{ if .Site.Data.homepage.social.linkedin }}
+        <li>
+            <a href="https://www.linkedin.com/in/{{ .Site.Data.homepage.social.linkedin }}">
+                <img class="contain" src="https://cdn.svgporn.com/logos/linkedin-icon.svg" alt="LinkedIn" loading="lazy">
+            </a>
+        </li>
+        {{ end }}
+        
+        {{ if .Site.Data.homepage.social.github }}
+        <li>
+            <a href="https://github.com/{{ .Site.Data.homepage.social.github }}">
+                <img class="contain" src="https://cdn.svgporn.com/logos/github-icon.svg" alt="GitHub" loading="lazy">
+            </a>
+        </li>
+        {{ end }}
+        
+        {{ if .Site.Data.homepage.social.gitlab }}
+        <li>
+            <a href="https://gitlab.com/{{ .Site.Data.homepage.social.gitlab }}">
+                <img class="contain" src="https://cdn.svgporn.com/logos/gitlab.svg" alt="GitLab" loading="lazy">
+            </a>
+        </li>
+        {{ end }
+        
+        {{ if .Site.Data.homepage.social.facebook }}
+        <li>
+            <a href="https://www.facebook.com/{{ .Site.Data.homepage.social.facebook }}">
+                <img class="contain" src="https://cdn.svgporn.com/logos/facebook.svg" alt="Facebook" loading="lazy">
+            </a>
+        </li>
+        {{ end }}
+        
+        {{ if .Site.Data.homepage.social.instagram }}
+        <li>
+            <a href="https://instagram.com/{{ .Site.Data.homepage.social.instagram }}">
+                <img class="contain" src="https://cdn.svgporn.com/logos/instagram-icon.svg" alt="Instagram" loading="lazy">
+            </a>
+        </li>
+        {{ end }}
+        
+        {{ if .Site.Data.homepage.social.gmail }}
+        <li>
+            <a href="mailto:{{ .Site.Data.homepage.social.gmail }}@gmail.com" >
+                <img class="contain" src="https://cdn.svgporn.com/logos/google-gmail.svg" alt="Gmail" loading="lazy">
+            </a></li>
         {{ end }}
     </ul>
-
-
 </div>
 
 <!--
