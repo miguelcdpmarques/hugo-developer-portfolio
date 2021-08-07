@@ -1,14 +1,15 @@
 ---
 banner:
-  title: Hi! I’m Sam
+  title: Hi! I’m Miguel
 social:
   twitter: ""
-  linkedin: sam-robbins-gb
-  github: samrobbins85
+  linkedin: miguelcdpmarques
+  github: miguelcdpmarques
+  stackoverflow: https://stackoverflow.com/users/9230980/miguel-marques?tab=profile
   gitlab: ""
   facebook: ""
   instagram: ""
-  gmail: samrobbinsgb
+  gmail: ""
 about:
   enable: true
   content: 2nd Year Durham Computer Science Student
@@ -29,7 +30,7 @@ experience:
       company: Google
       duration: November 2019
 hackathons:
-  enable: true
+  enable: false
   item:
     - title: Hack Cambridge 2019
       description: Climate change simulator
